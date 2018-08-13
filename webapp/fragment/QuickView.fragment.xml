@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickView id="quickViewNavOrigin"  navigate=".onNavigate"  >
+		<QuickViewPage id ="quickviewpage" header="Header" icon="sap-icon://org-chart" title="{DepartmentName}" titleUrl=""
+			description="This is a description: {/DepartmentName}">
+			<QuickViewGroup heading="Contact Persons">
+				<QuickViewGroupElement id="element" label="{DepartmentName}" value="{value}" url="{url}" type="{elementType}" pageLinkId="{pageLinkId}"
+					emailSubject="{emailSubject}" target="{target}"></QuickViewGroupElement>
+			</QuickViewGroup>
+		</QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns="sap.uxap" xmlns:f="sap.f">
+	<m:Dialog contentWidth="30em" showHeader="false" horizontalScrolling="false" afterClose="onExit" contentHeight="20em" id="popupFragmentId">
+		<m:Page showNavButton="false" title="{detailItem>/DepartmentName}" enableScrolling="true">
+			<m:content>
+				<m:VBox class="sapUiSmallMargin">
+					<!--<m:Title text="{detailItem>/DepartmentName}" level="H1"></m:Title>-->
+					<m:HBox>
+						<m:VBox alignItems="Center">
+							<f:Avatar displaySize="L" src="{detailItem>/ImageUrl}"></f:Avatar>
+						</m:VBox>
+						<m:VBox class="sapUiSmallMarginBegin">
+							<m:Label text="Main Contact"></m:Label>
+							<m:Text text="{detailItem>/ResponsiblePerson}"></m:Text>
+							<m:Link text="{detailItem>/EMail}" href="mailto:{detailItem>EMail}"/>
+							<m:Link text="{detailItem>/TelNumber}" href="tel:{detailItem>TelNumber}"/>
+						</m:VBox>
+						<m:VBox class="sapUiSmallMarginBegin">
+							<m:Label text="Additional Contact"></m:Label>
+							<m:Text text="Someone else"></m:Text>
+							<m:Link text="email@sap.com" href="mailto:{detailItem>EMail}"/>
+							<m:Link text="+123456456" href="tel:+123456456"/>
+						</m:VBox>
+					</m:HBox>
+					<m:VBox class="sapUiSmallMarginTop" justifyContent="SpaceAround">
+						<m:Text text="{detailItem>/ShortDescription}"></m:Text>
+					</m:VBox>
+				</m:VBox>
+			</m:content>
+		</m:Page>
+		<m:buttons>
+			<!--<m:Button id="company.invite.dialog.invite.button" press="saveProject" text="Create Project"/>-->
+			<m:Button id="company.invite.dialog.cancel.button" press="onExit" text="Cancel"/>
+		</m:buttons>
+	</m:Dialog>
+</core:FragmentDefinition>

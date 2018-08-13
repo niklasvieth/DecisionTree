@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:f="sap.ui.layout.form" xmlns="sap.uxap">
+	<m:Dialog contentWidth="35em" showHeader="false" horizontalScrolling="false"  afterClose="onExit" contentHeight="22em"  id="popupFragmentId">
+		<m:Page showNavButton="false" title="Create new Leonardo Project" enableScrolling="true">
+			<m:content>
+				<f:SimpleForm id="detailsformId" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4"
+					labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+					columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<m:VBox>
+						<m:VBox>
+							<m:VBox width="100%">
+								<m:Label text="Project Name" required="true"/>
+							</m:VBox>
+							<m:VBox width="100%">
+								<m:Input id="projectNameInput" width="100%" type="Text" change="onCompanyNameChange" maxLength="120"/>
+							</m:VBox>
+						</m:VBox>
+						<m:VBox>
+							<m:VBox width="100%">
+								<m:Label text="Department" required="true"/>
+							</m:VBox>
+							<m:VBox width="100%">
+								<!--<m:Input id="departmentInput" width="100%" type="Text" change="onCompanyRoleChange" maxLength="120" showValueHelp="true"-->
+								<!--	valueHelpOnly="true"/>-->
+								<m:Select showSecondaryValues="true" items="{ path: 'department_model>/DepartmentsSet', filters: [{ path: 'Decision', operator: 'EQ', value1: '1' }] }" width= "100%" id="departmentSelect">
+									<core:ListItem key="{department_model>DepartmentID}" text="{department_model>DepartmentName}" additionalText="{department_model>DepartmentID}"/>
+								</m:Select>
+							</m:VBox>
+						</m:VBox>
+						<m:VBox></m:VBox>
+						<m:VBox>
+							<m:VBox width="100%">
+								<m:Label text="Description" required="true"/>
+							</m:VBox>
+							<m:VBox width="100%">
+								<m:TextArea id="descriptionInput" width="100%" rows="5"></m:TextArea>
+								<!--<m:Input id="descriptionInput" width="100%" type="Text" change="onCompanyRoleChange" maxLength="500"/>-->
+							</m:VBox>
+						</m:VBox>
+					</m:VBox>
+				</f:SimpleForm>
+			</m:content>
+		</m:Page>
+		<m:buttons>
+			<m:Button id="company.invite.dialog.invite.button" press="saveProject" text="Create Project"/>
+			<m:Button id="company.invite.dialog.cancel.button" press="onExit" text="Cancel"/>
+		</m:buttons>
+	</m:Dialog>
+</core:FragmentDefinition>

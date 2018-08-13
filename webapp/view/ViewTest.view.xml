@@ -1,0 +1,439 @@
+<mvc:View controllerName="decDecisionTree.controller.ViewTest" xmlns:core="sap.ui.core" xmlns="sap.uxap" xmlns:m="sap.m"
+	xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.f">
+	<m:App>
+		<m:Page title="Leonardo Decision Tree App" titleLevel="H1" showHeader="false">
+			<m:ObjectHeader title="Leonardo Decision Tree App" backgroundDesign="Solid" icon="sap-icon://org-chart">
+				<m:attributes>
+					<m:ObjectAttribute
+						text="In this app you can see all the different Prototyping teams related to Leonardo projects. You can set different parameters depending on your project and the most fitting prototyping department for your Leonardo Use Case will be displayed. Many past Leonardo project are shown and you can see which department executed them."></m:ObjectAttribute>
+				</m:attributes>
+			</m:ObjectHeader>
+			<m:IconTabBar id="myTabContainer" expandable="false">
+				<m:items>
+					<m:IconTabFilter text="Parameters">
+						<l:DynamicSideContent id="DynamicSideContent" class="sapUiDSCExplored sapUiContentPadding" sideContentFallDown="BelowM"
+							containerQuery="true" breakpointChanged="updateToggleButtonState" equalSplit="true">
+							<l:mainContent>
+								<m:VBox width="100%">
+									<m:HBox>
+										<m:VBox id="grid_budget" width="50%">
+											<m:Title text="Do you have Budget?"></m:Title>
+											<l:Grid>
+												<l:content>
+													<m:VBox>
+														<m:ToggleButton id="tbn1" text="Yes" press="onBudgetPress"/>
+													</m:VBox>
+													<m:VBox>
+														<m:ToggleButton id="tbn2" text="No" press="onBudgetPress"/>
+													</m:VBox>
+												</l:content>
+											</l:Grid>
+											<m:HBox id="checkbox_c_level" visible="false">
+												<m:CheckBox id="checkbox1" select="onCheckBoxClick"/>
+												<m:Label text="C-Level involvement" labelFor="checkbox1" class="sapUiSmallMarginTop"></m:Label>
+											</m:HBox>
+										</m:VBox>
+										<m:VBox id="grid_solutions" visible="false" width="50%">
+											<m:Title text="SAP solutions identified?"></m:Title>
+											<l:Grid>
+												<l:content>
+													<m:VBox>
+														<m:ToggleButton id="tbn3" text="Yes" press="onSolutionPress"/>
+													</m:VBox>
+													<m:VBox>
+														<m:ToggleButton id="tbn4" text="No" press="onSolutionPress"/>
+													</m:VBox>
+												</l:content>
+											</l:Grid>
+										</m:VBox>
+									</m:HBox>
+									<m:VBox id="grid_project_outcome" visible="false" class="sapUiSmallMarginTop">
+										<m:Title text="Project outcome sought?"></m:Title>
+										<m:HBox class="sapUiSmallMarginTop sapUiSmallMarginBottom" id="tbn5_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn5" text="Solution Architecture" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class="sapUiSmallMarginBottom" id="tbn6_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn6" text="Business Innovation" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class="sapUiSmallMarginBottom" id="tbn7_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn7" text="Customer Data Prototype" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class="sapUiSmallMarginBottom" id="tbn8_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn8" text="Demo-Based Prototype" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class="sapUiSmallMarginBottom" id="tbn9_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn9" text="Ideation/Biz Innovation" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class=" sapUiSmallMarginBottom" id="tbn10_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn10" text="Demo Showcase" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+										<m:HBox class="sapUiSmallMarginBottom" id="tbn11_box">
+											<m:VBox width="40%">
+												<m:ToggleButton id="tbn11" text="Solution Design" press="onProjectOutcomePress" width="100%"/>
+											</m:VBox>
+											<m:VBox class="sapUiSmallMarginBegin" width="60%">
+												<m:Text
+													text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>
+											</m:VBox>
+										</m:HBox>
+									</m:VBox>
+									<m:VBox id="grid_project_length" visible="false">
+										<m:Title text="Focus on ..."></m:Title>
+										<m:HBox>
+											<m:VBox class="sapUiTinyMarginEnd">
+												<m:ToggleButton id="tbn12" text="One Solution SAP" press="onProjectLengthPress"/>
+											</m:VBox>
+											<m:VBox class="sapUiTinyMarginEnd">
+												<m:ToggleButton id="tbn13" text="Multiple Solutions" press="onProjectLengthPress"/>
+											</m:VBox>
+											<m:VBox>
+												<m:ToggleButton id="tbn14" text="New Innovation/Product Extension" press="onProjectLengthPress"/>
+											</m:VBox>
+										</m:HBox>
+									</m:VBox>
+								</m:VBox>
+							</l:mainContent>
+							<l:sideContent>
+								<m:ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+									<m:List id="departmentList" noDataText="Select more parameters on the left" headerText="Departments that fit"
+										items="{ path : 'department_model>/DepartmentsSet', filters: [{ path: 'Decision', operator: 'EQ', value1: '0' }] }">
+										<m:items>
+											<m:CustomListItem type="Navigation" press="openDepartmentDetails">
+												<m:VBox class="sapUiSmallMargin">
+													<m:HBox>
+														<m:VBox alignItems="Center">
+															<f:Avatar displaySize="L" src="{department_model>ImageUrl}"></f:Avatar>
+														</m:VBox>
+														<m:VBox class="sapUiSmallMarginBegin">
+															<m:Title text="{department_model>DepartmentName}" level="H1"></m:Title>
+															<m:Text text="{department_model>ResponsiblePerson}"></m:Text>
+															<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>
+															<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>
+														</m:VBox>
+														<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+														<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+														<!--</m:VBox>-->
+													</m:HBox>
+													<m:VBox class="sapUiSmallMarginTop" justifyContent="SpaceAround">
+														<m:Text text="{department_model>ShortDescription}"></m:Text>
+													</m:VBox>
+												</m:VBox>
+											</m:CustomListItem>
+										</m:items>
+									</m:List>
+									<m:List id="departmentListAlsoConsider" headerText="Also consider"
+										items="{ path : 'department_model>/DepAltSet', filters: [{ path: 'Decision', operator: 'EQ', value1: '10100010000010' }] }" visible="false">
+										<m:items>
+											<m:CustomListItem press="onDepartmentPress" type="Navigation">
+												<m:VBox class="sapUiSmallMargin">
+													<m:HBox>
+														<m:VBox alignItems="Center">
+															<f:Avatar displaySize="L" src="{department_model>ImageUrl}"></f:Avatar>
+														</m:VBox>
+														<m:VBox class="sapUiSmallMarginBegin">
+															<m:Title text="{department_model>DepartmentName}" level="H1"></m:Title>
+															<m:Text text="{department_model>ResponsiblePerson}"></m:Text>
+															<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>
+															<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>
+														</m:VBox>
+														<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+														<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+														<!--</m:VBox>-->
+													</m:HBox>
+													<m:VBox class="sapUiSmallMarginTop" justifyContent="SpaceAround">
+														<m:Text text="{department_model>ShortDescription}"></m:Text>
+													</m:VBox>
+												</m:VBox>
+											</m:CustomListItem>
+										</m:items>
+									</m:List>
+								</m:ScrollContainer>
+							</l:sideContent>
+						</l:DynamicSideContent>
+						<!--<l:BlockLayout>-->
+						<!--	<l:BlockLayoutRow>-->
+						<!--		<l:BlockLayoutCell width="2" class="sapUiNoContentPadding">-->
+						<!--New Design-->
+						<!--			<m:VBox width="100%">-->
+						<!--				<m:HBox>-->
+						<!--					<m:VBox id="grid_budget" width="50%">-->
+						<!--						<m:Title text="Do you have Budget?"></m:Title>-->
+						<!--						<l:Grid>-->
+						<!--							<l:content>-->
+						<!--								<m:VBox>-->
+						<!--									<m:ToggleButton id="tbn1" text="Yes" press="onBudgetPress"/>-->
+						<!--								</m:VBox>-->
+						<!--								<m:VBox>-->
+						<!--									<m:ToggleButton id="tbn2" text="No" press="onBudgetPress"/>-->
+						<!--								</m:VBox>-->
+						<!--							</l:content>-->
+						<!--						</l:Grid>-->
+						<!--						<m:HBox id="checkbox_c_level" visible="false">-->
+						<!--							<m:CheckBox id="checkbox1" select="onCheckBoxClick"/>-->
+						<!--							<m:Label text="C-Level involvement" labelFor="checkbox1" class="sapUiSmallMarginTop"></m:Label>-->
+						<!--						</m:HBox>-->
+						<!--					</m:VBox>-->
+						<!--					<m:VBox id="grid_solutions" visible="false" width="50%">-->
+						<!--						<m:Title text="SAP solutions identified?"></m:Title>-->
+						<!--						<l:Grid>-->
+						<!--							<l:content>-->
+						<!--								<m:VBox>-->
+						<!--									<m:ToggleButton id="tbn3" text="Yes" press="onSolutionPress"/>-->
+						<!--								</m:VBox>-->
+						<!--								<m:VBox>-->
+						<!--									<m:ToggleButton id="tbn4" text="No" press="onSolutionPress"/>-->
+						<!--								</m:VBox>-->
+						<!--							</l:content>-->
+						<!--						</l:Grid>-->
+						<!--					</m:VBox>-->
+						<!--				</m:HBox>-->
+						<!--				<m:VBox id="grid_project_outcome" visible="false" class="sapUiSmallMarginTop">-->
+						<!--					<m:Title text="Project outcome sought?"></m:Title>-->
+						<!--					<m:HBox class="sapUiSmallMarginTop sapUiSmallMarginBottom" id="tbn5_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn5" text="Solution Architecture" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class="sapUiSmallMarginBottom" id="tbn6_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn6" text="Business Innovation" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class="sapUiSmallMarginBottom" id="tbn7_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn7" text="Customer Data Prototype" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class="sapUiSmallMarginBottom" id="tbn8_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn8" text="Demo-Based Prototype" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class="sapUiSmallMarginBottom" id="tbn9_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn9" text="Ideation/Biz Innovation" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class=" sapUiSmallMarginBottom" id="tbn10_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn10" text="Demo Showcase" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--					<m:HBox class="sapUiSmallMarginBottom" id="tbn11_box">-->
+						<!--						<m:VBox width="40%">-->
+						<!--							<m:ToggleButton id="tbn11" text="Solution Design" press="onProjectOutcomePress" width="100%"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiSmallMarginBegin" width="60%">-->
+						<!--							<m:Text-->
+						<!--								text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "></m:Text>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--				</m:VBox>-->
+						<!--				<m:VBox id="grid_project_length" visible="false">-->
+						<!--					<m:Title text="Focus on ..."></m:Title>-->
+						<!--					<m:HBox>-->
+						<!--						<m:VBox class="sapUiTinyMarginEnd">-->
+						<!--							<m:ToggleButton id="tbn12" text="One Solution SAP" press="onProjectLengthPress"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox class="sapUiTinyMarginEnd">-->
+						<!--							<m:ToggleButton id="tbn13" text="Multiple Solutions" press="onProjectLengthPress"/>-->
+						<!--						</m:VBox>-->
+						<!--						<m:VBox>-->
+						<!--							<m:ToggleButton id="tbn14" text="New Innovation/Product Extension" press="onProjectLengthPress"/>-->
+						<!--						</m:VBox>-->
+						<!--					</m:HBox>-->
+						<!--				</m:VBox>-->
+						<!--			</m:VBox>-->
+						<!--		</l:BlockLayoutCell>-->
+						<!--		<l:BlockLayoutCell width="2" backgroundColorSet="ColorSet8" class="sapUiNoContentPadding sapUiMediumMarginBegin">-->
+						<!--<l:Grid id="grid_departments" defaultSpan="L6" class="sapUiSmallMarginTop"></l:Grid>-->
+						<!--			<m:List id="departmentList" noDataText="Select more parameters on the left" headerText="Departments that fit"-->
+						<!--				items="{ path : 'department_model>/DepartmentsSet', filters: [{ path: 'Decision', operator: 'EQ', value1: '0' }] }">-->
+						<!--				<m:items>-->
+						<!--					<m:CustomListItem type="Navigation" press="openDepartmentDetails">-->
+						<!--						<m:VBox class="sapUiSmallMargin">-->
+						<!--							<m:HBox>-->
+						<!--								<m:VBox alignItems="Center">-->
+						<!--									<f:Avatar displaySize="L" src="{department_model>ImageUrl}"></f:Avatar>-->
+						<!--								</m:VBox>-->
+						<!--								<m:VBox class="sapUiSmallMarginBegin">-->
+						<!--									<m:Title text="{department_model>DepartmentName}" level="H1"></m:Title>-->
+						<!--									<m:Text text="{department_model>ResponsiblePerson}"></m:Text>-->
+						<!--									<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>-->
+						<!--									<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>-->
+						<!--								</m:VBox>-->
+						<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+						<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+						<!--</m:VBox>-->
+						<!--							</m:HBox>-->
+						<!--							<m:VBox class="sapUiSmallMarginTop" justifyContent="SpaceAround">-->
+						<!--								<m:Text text="{department_model>ShortDescription}"></m:Text>-->
+						<!--							</m:VBox>-->
+						<!--						</m:VBox>-->
+						<!--					</m:CustomListItem>-->
+						<!--				</m:items>-->
+						<!--			</m:List>-->
+						<!--			<m:List id="departmentListAlsoConsider" headerText="Also consider"-->
+						<!--				items="{ path : 'department_model>/DepAltSet', filters: [{ path: 'Decision', operator: 'EQ', value1: '10100010000010' }] }" visible="false">-->
+						<!--				<m:items>-->
+						<!--					<m:CustomListItem press="onDepartmentPress" type="Navigation">-->
+						<!--						<m:VBox class="sapUiSmallMargin">-->
+						<!--							<m:HBox>-->
+						<!--								<m:VBox alignItems="Center">-->
+						<!--									<f:Avatar displaySize="L" src="{department_model>ImageUrl}"></f:Avatar>-->
+						<!--								</m:VBox>-->
+						<!--								<m:VBox class="sapUiSmallMarginBegin">-->
+						<!--									<m:Title text="{department_model>DepartmentName}" level="H1"></m:Title>-->
+						<!--									<m:Text text="{department_model>ResponsiblePerson}"></m:Text>-->
+						<!--									<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>-->
+						<!--									<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>-->
+						<!--								</m:VBox>-->
+						<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+						<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+						<!--</m:VBox>-->
+						<!--							</m:HBox>-->
+						<!--							<m:VBox class="sapUiSmallMarginTop" justifyContent="SpaceAround">-->
+						<!--								<m:Text text="{department_model>ShortDescription}"></m:Text>-->
+						<!--							</m:VBox>-->
+						<!--						</m:VBox>-->
+						<!--					</m:CustomListItem>-->
+						<!--				</m:items>-->
+						<!--			</m:List>-->
+						<!--		</l:BlockLayoutCell>-->
+						<!--	</l:BlockLayoutRow>-->
+						<!--</l:BlockLayout>-->
+					</m:IconTabFilter>
+					<m:IconTabFilter text="All Departments">
+						<m:List id="departmentListAll" noDataText="No Data" headerText="All Leonardo Departments"
+							items="{ path : 'department_model>/DepartmentsSet' , filters: [{ path: 'Decision', operator: 'EQ', value1: '1' }] }">
+							<m:items>
+								<m:CustomListItem press="openDepartmentDetails" type="Navigation">
+									<m:VBox class="sapUiSmallMargin">
+										<m:HBox>
+											<m:HBox width="30%">
+												<m:VBox alignItems="Center">
+													<f:Avatar displaySize="XL" src="{department_model>ImageUrl}"></f:Avatar>
+												</m:VBox>
+												<m:VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+													<m:Title text="{department_model>DepartmentName}" level="H1"></m:Title>
+													<m:Text text="{department_model>ResponsiblePerson}"></m:Text>
+													<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>
+													<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>
+												</m:VBox>
+											</m:HBox>
+											<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+											<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+											<!--</m:VBox>-->
+											<m:VBox class="sapUiMediumMargin" width="70%">
+												<m:Text text="{department_model>ShortDescription}"></m:Text>
+											</m:VBox>
+										</m:HBox>
+									</m:VBox>
+								</m:CustomListItem>
+							</m:items>
+						</m:List>
+					</m:IconTabFilter>
+					<m:IconTabFilter text="Leonardo Projects">
+						<m:List id="projects" noDataText="No Data" headerText="All Leonardo Projects so far" items="{ path : 'department_model>/ProjectSet' }"
+							class="sapUiMediumMarginBegin sapUiMediumMarginEnd">
+							<m:headerToolbar>
+								<m:Toolbar>
+									<m:Button icon="sap-icon://add" text="Add new project" press="onAddEntryPress"></m:Button>
+								</m:Toolbar>
+							</m:headerToolbar>
+							<m:items>
+								<m:CustomListItem >
+									<m:VBox class="sapUiSmallMargin">
+										<m:VBox class="sapUiTinyMarginBottom">
+											<m:Title text="{department_model>ProjectName}" level="H1"></m:Title>
+										</m:VBox>
+										<m:HBox>
+											<m:VBox alignItems="Center">
+												<!--<f:Avatar displaySize="L" src="{department_model>ImageUrl}"></f:Avatar>-->
+												<core:Icon src="sap-icon://collaborate" size="2rem"></core:Icon>
+											</m:VBox>
+											<m:HBox class="sapUiSmallMarginBegin">
+												<m:VBox width="30%">
+													<m:Title text="{department_model>DepartmentName}" level="H2"></m:Title>
+													<m:Text text="{department_model>ResponsiblePerson}"></m:Text>
+													<m:Link text="{department_model>EMail}" href="mailto:{department_model>EMail}"/>
+													<m:Link text="{department_model>TelNumber}" href="tel:{department_model>TelNumber}"/>
+												</m:VBox>
+												<m:VBox class="sapUiSmallMarginBegin">
+													<m:Text text="{department_model>ProjectDescription}"></m:Text>
+												</m:VBox>
+											</m:HBox>
+											<!--<m:VBox class="sapUiSmallMargin" justifyContent="SpaceAround">-->
+											<!--	<m:Button text="Details" press=".onDepartmentPress"></m:Button>-->
+											<!--</m:VBox>-->
+										</m:HBox>
+									</m:VBox>
+								</m:CustomListItem>
+							</m:items>
+						</m:List>
+					</m:IconTabFilter>
+				</m:items>
+			</m:IconTabBar>
+		</m:Page>
+	</m:App>
+</mvc:View>
