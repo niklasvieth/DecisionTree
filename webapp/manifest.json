@@ -15,7 +15,6 @@
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
 		},
-
 		"dataSources": {
 			"departmentService": {
 				"uri": "/destinations/departments",
@@ -33,7 +32,6 @@
 			}
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -52,10 +50,8 @@
 		"supportedThemes": [
 			"sap_hcb",
 			"sap_belize"
-
 		]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "decDecisionTree.view.ViewTest",
@@ -92,9 +88,15 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }

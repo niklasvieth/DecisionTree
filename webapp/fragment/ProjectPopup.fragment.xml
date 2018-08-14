@@ -25,7 +25,7 @@
 									<core:ListItem key="{department_model>DepartmentID}" text="{department_model>DepartmentName}" additionalText="{department_model>DepartmentID}"/>
 								</m:Select>
 							</m:VBox>
-						</m:VBox>
+						</m:VBox> 
 						<m:VBox></m:VBox>
 						<m:VBox>
 							<m:VBox width="100%">

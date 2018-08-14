@@ -165,7 +165,11 @@ sap.ui.define([
 			this.onButtonPress();
 		},
 		onCheckBoxClick: function (oEvent) {
-			this.setDepartmentFilter1('11000000000000');
+
+			if (this.getView().byId("checkbox_c_level").getSelected()) {
+
+				this.setDepartmentFilter1('11000000000000');
+			}
 
 		},
 		onSolutionPress: function (oEvent) {
@@ -308,7 +312,7 @@ sap.ui.define([
 			sap.ui.getCore().setModel(oModel, "detailItem");
 			// view.getModel('detailItem').setData(item);
 			console.log(this.getView().getModel('detailItem'));
-			
+
 			this._pressDialog = sap.ui.xmlfragment("decDecisionTree.fragment.DepartmentPopup", this);
 			// new sap.m.Dialog({
 			// 	title: "Department Details",
